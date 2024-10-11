@@ -1,6 +1,6 @@
 # OEB docs
 
-This repository contains the documentation for Open Educational Badges. (For now) you can see the documentation [here](https://mint-o-badges.github.io/oeb-docs/site/). It is built with [MkDocs](https://www.mkdocs.org/) and uses the [readthedocs theme](https://about.readthedocs.com/).
+This repository contains the documentation for Open Educational Badges. You can see the documentation [here](https://docs.openbadges.education/site/). It is built with [MkDocs](https://www.mkdocs.org/) and uses the [readthedocs theme](https://about.readthedocs.com/).
 
 ## Build
 
