@@ -1,6 +1,8 @@
 site_name: OEB Docs
 nav:
   - Home: index.md
-  - Technical: technical/index.md
-  - UI: ui/index.md
+  - Technical:
+    - Introduction: technical/index.md
+  - UI:
+    - Introduction: ui/index.md
 theme: readthedocs
