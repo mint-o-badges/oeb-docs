@@ -2,7 +2,7 @@
 
 ## Client ID and Secret
 
-To obtain a client ID and secret, log in in the [UI](https://openbadges.education/auth/login). You can then navigate to *Konto -> *App Integration* (or go the [link](https://openbadges.education/profile/app-integrations) directly). via the *Neue Credentials generieren* button you can then generate your credentials.
+To obtain a client ID and secret, log in in the [UI](https://openbadges.education/auth/login). You can then navigate to *Konto -> App Integration* (or go the [link](https://openbadges.education/profile/app-integrations) directly). via the *Neue Credentials generieren* button you can then generate your credentials.
 
 The credentials consist of a **Client ID** and a **Client Secret**. You should write down your client secret because you won't be able to view it at a later point in time.
 With those credentials you and other third party applications are able to obtain access to our API and thus do everything that our UI can do.
