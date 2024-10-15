@@ -20,9 +20,9 @@ If you use `cURL` for example this might look like this:
 curl --request POST \
     --url 'https://api.openbadges.education/o/token' \
     --header 'content-type: application/x-www-form-urlencoded' \
-    --data grant_type=client_credentials \
-    --data client_id=YOUR_CLIENT_ID \
-    --data client_secret=YOUR_CLIENT_SECRET
+    --data 'grant_type=client_credentials' \
+    --data 'client_id=YOUR_CLIENT_ID' \
+    --data 'client_secret=YOUR_CLIENT_SECRET'
 ```
 The response will then look something like this:
 ```JSON
@@ -44,8 +44,8 @@ For that you don't need a client ID and Secret, but the username and password of
 curl --request POST \
     --url 'https://api.openbadges.education/o/token' \
     --header 'content-type: application/x-www-form-urlencoded' \
-    --data grant_type=password \
+    --data 'grant_type=password' \
     --data 'username=YOUR_USERNAME' \
     --data 'password=YOUR_PASSWORD' \
-    --data client_id=public
+    --data 'client_id=public'
 ```
