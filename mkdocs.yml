@@ -3,6 +3,7 @@ nav:
   - Home: index.md
   - Technical:
     - Introduction: technical/index.md
+    - Credentials: technical/credentials.md
   - UI:
     - Introduction: ui/index.md
 theme: readthedocs
