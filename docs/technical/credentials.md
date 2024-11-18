@@ -52,7 +52,7 @@ Note: Unnecessary use of -X or --request, POST is already inferred.
 < Content-Length: 67
 < Set-Cookie:  access_token=YOUR_ACCESS_TOKEN; expires=Tue, 19 Nov 2024 13:19:00 GMT; HttpOnly; Max-Age=86400; Path=/; Secure
 < 
-* Connection #0 to host localhost left intact
+* Connection #0 to host api.openbadges.education left intact
 {"expires_in": 86400, "token_type": "Bearer", "scope": "r:profile"}
 ```
 Once again, note that the scope doesn't actually mean anything (yet).
