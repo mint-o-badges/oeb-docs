@@ -14,6 +14,9 @@ So again:
 
 If you want to make requests to our API, you need to obtain an **Access token**.
 These are tokens with a limited time of life (24 hours by default). To request tokens, you need to make a POST request to our API.
+For security reasons in our application we store the access token in an [HttpOnly](https://owasp.org/www-community/HttpOnly) cookie.
+That means that the browser cannot access the content, instead it's passed with the requests as a cookie.
+That also means that we don't return the access token in the data section of the response, but in the cookie section.
 
 If you use `cURL` for example this might look like this:
 ```bash
@@ -22,18 +25,38 @@ curl --request POST \
     --header 'content-type: application/x-www-form-urlencoded' \
     --data 'grant_type=client_credentials' \
     --data 'client_id=YOUR_CLIENT_ID' \
-    --data 'client_secret=YOUR_CLIENT_SECRET'
+    --data 'client_secret=YOUR_CLIENT_SECRET' --verbose
 ```
 The response will then look something like this:
-```JSON
-{
-    "access_token": "YOUR_ACCESS_TOKEN",
-    "expires_in": 86400,
-    "token_type": "Bearer",
-    "scope": "r:profile"
-}
+```text
+Note: Unnecessary use of -X or --request, POST is already inferred.
+* <a lot of verbose messages that aren't relevant>
+> POST /o/token HTTP/1.1
+> Host: api.openbadges.education
+> User-Agent: curl/7.88.1
+> Accept: */*
+> content-type: application/x-www-form-urlencoded
+> Content-Length: 102
+> 
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* We are completely uploaded and fine
+< HTTP/2 200 
+< access-control-allow-origin: *
+< cache-control: no-store
+< content-type: application/json
+< date: Mon, 18 Nov 2024 13:22:27 GMT
+< pragma: no-cache
+< server: nginx/1.25.2
+< vary: Authorization, Cookie, Origin,Origin
+< x-frame-options: DENY
+< Content-Length: 67
+< Set-Cookie:  access_token=YOUR_ACCESS_TOKEN; expires=Tue, 19 Nov 2024 13:19:00 GMT; HttpOnly; Max-Age=86400; Path=/; Secure
+< 
+* Connection #0 to host localhost left intact
+{"expires_in": 86400, "token_type": "Bearer", "scope": "r:profile"}
 ```
 Once again, note that the scope doesn't actually mean anything (yet).
+You can read the access token from the `Set-Cookie` value.
 
 ## With username and password
 
@@ -47,5 +70,5 @@ curl --request POST \
     --data 'grant_type=password' \
     --data 'username=YOUR_USERNAME' \
     --data 'password=YOUR_PASSWORD' \
-    --data 'client_id=public'
+    --data 'client_id=public' --verbose
 ```
